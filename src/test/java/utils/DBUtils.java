@@ -4,6 +4,7 @@ import org.apache.commons.collections4.map.HashedMap;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -27,7 +28,7 @@ public class DBUtils {
 
             while (resultSet.next()) {
 
-                Map<String, String> row = new HashedMap<>();
+                Map<String, String> row = new HashMap<>();
                 for (int i = 1; i <= resultSetMetaData.getColumnCount(); i++) {
                     String columnName = resultSetMetaData.getColumnName(i);
                     String columnValue = resultSet.getString(columnName);
