@@ -150,6 +150,42 @@ package - convert your code to packages
 
 
 
+-----------------------------------------------------------------------------------
+
+
+
+
+API Notes -
+
+Class 5 -
+
+
+Rest assured API
+
+It is DSL (domain specific language)
+It is java based library that is used to automation rest API'
+
+given, when, then
+
+
+Rest assured follows the functionality of BDD
+
+pre condition - request preparation, request specification
+
+given - prepare the request
+when  - hitting the end point (send the request)
+then - expected response
+
+
+NOTE: baseURI = baseURL
+
+
+
+
+
+
+
+
 
 
 
