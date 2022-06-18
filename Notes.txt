@@ -180,6 +180,85 @@ then - expected response
 NOTE: baseURI = baseURL
 
 
+Hamcrest matchers -
+It is a popular framework that helps us to create the matcher objects.
+
+prettyPrint - it is used to print the response in console
+
+
+Class 6
+
+
+Recap -
+
+Java rest assured API -
+
+given - prepare the request
+when - making a call
+then - verification/assertion
+
+Class 7
+
+Recap -
+
+To create an employee we use -
+POST -
+Base url = base URI
+end point
+Headers
+body
+token
+
+
+then -
+
+- jsonPath()
+
+- To retrieve employee from the database
+GET -
+query parameter
+token
+
+@Test - junit annotation we use to execute our test cases
+@Fix method order we use to change the flow of execution (Name.Ascending - alphabetical order)
+
+TO update the details of the employee
+PUT
+body
+header
+token
+end point
+
+200 vs 201
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
