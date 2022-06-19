@@ -12,8 +12,6 @@ Feature: This feature  covers all the API related scenario
     And the employee id "Employee.employee_id" is stored as a global variable to be used for other calls
 
   @api
-
-
   Scenario: Get the newly created employee
     Given a request is prepared to get the employee
     When a GET call is made to retrieve the created employee
