@@ -99,9 +99,13 @@ public class APIWorkflowSteps {
                String actualValue = actualData.get(key);
                Assert.assertEquals(expectedValue, actualValue);
             }
-
         }
-
-
+    }
+    @Given("a request is prepared to create an employee via json payload")
+    public void a_request_is_prepared_to_create_an_employee_via_json_payload() {
+        request =
+                given().header(APIConstants.HEADER_CONTENT_TYPE, APIConstants.HEADER_CONTENT_TYPE_VALUE).
+                header(APIConstants.HEADER_AUTHORIZATION, GenerateTokenSteps.token).
+                        body(APIPayloadConstants.createEmployeePayloadViaJson());
     }
 }

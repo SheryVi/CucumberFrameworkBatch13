@@ -232,6 +232,24 @@ end point
 200 vs 201
 
 
+Class 8 -
+
+Recap -
+
+Generate token via automation
+
+Created POST request to add an employee in feature file
+
+API constants class -
+API payload constants - the body we need to create, update employee record, we can pass it from
+api payload constants class
+
+
+
+
+
+
+
 
 
 
