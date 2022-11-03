@@ -157,6 +157,407 @@ package - convert your code to packages
 
 API Notes -
 
+Class 1 -
+
+Application Programing Interface
+UI - User Interface - позволяет взаимодействовать с приложением
+
+ATM - Automated Teller Machine (аппарат для выдычи денег)
+Посредники API -интерфейс прикладного программирования
+
+делает запросы - Client(end user)
+отвечает на запросы клиента - Server()
+
+Разработчики мобильного приложения  являются потребителями, а разработчики бэкенд приложения поставщиками
+Для обмена данными со своим бэкенд приложением  мобильное приложение использует интернет используя протокол HTTP.
+Этот протокол применяется любым вебсайтом. Запрос отправляется на удаленный сервер сайта с помощью http/https адреса
+Бэкенд хранит фотографии в файловой системе сервера, а ID фото в базе данных.
+API интерфейсы используютя программным обеспечением либо компания, либо отдельные лица, разрабатывающие это ПО.
+
+Клиент-серверная архитектура
+Одноуровневая архитектура- все двнные слоев
+        (presentation, application, data layer ) доступны в одном месте.
+Пример: калькулятор, Excel file
+
+
+Двухуровневая архитектура -
+         presentation layer доступен на одном конце, application и data layer доступны на другом конце
+Пример: McDonald's, pizza hut, subway
+
+
+Трехуровневая архитектура (распределенная)-
+    presentation layer доступен на одном конце, application  доступен на втором концеб
+    и data layer доступны на третьем конце
+Пример: IG, FB
+
+Distributed architecture(Распределенная архитектура)
+
+Преимущества:
+Повышенная безопасность
+Масштабируемый
+Гибкий
+
+GUI tests- тестирование графического  интерфейса
+
+
+Каждое приложение имеет эти три слоя:
+    Presentation layer - то что видит пользователь и с помощью чего он может делать запросы
+    Application layer - это бизнес-логика приложения(инструктирует приложение работать в разных обстоятельствах
+    и разных направлениях).- промежуточное ПО
+    Data layer - база данных (Backend)
+
+Why use APIS?
+1. TO make systems developed in different languages communicate
+    ЧТОБЫ системы, разработанные на разных языках, могли взаимодействовать
+2. For security purposes
+    В целях безопасности
+
+What type of testing we have for front end?
+Какой тип тестирования у нас есть для front end?
+UI testing
+
+Api tesing:
+Backend TESTING
+Серверное ТЕСТИРОВАНИЕ
+
+API - Это среда тестирования без пользовательского интерфейса
+
+Class 2 -
+
+API - it transfers the information from presentation layer to data layer
+Client -
+Server -
+
+presentation layer - it provides UI for user
+                    предоставляет пользовательский интерфейс пользователю
+
+application layer - business logic is written here
+                    бизнес-логика написана здесь
+data layer  - data associated to the application exist in data layer
+              данные, связанные с приложением, существуют на уровне данных
+
+
+APi - это промежуточное программное обеспечение, которое соединяет наш интерфейс с серверной частью.
+
+UI - для разработки могут быть использованы разные языки:
+    HTML, JS, PHP, WordPress, Joomla
+
+DB - Java, python, C++, C#, Ruby
+
+API предостовляет ссылку(link) для взаимодействия UI и DB,
+чтобы две системы сознанные разными языками могли взаимодействовать между собой.
+
+
+
+C - create
+R - retrieve
+U - update
+D - delete
+
+These are the operations we perform while testing UI, API and DB
+Это операции, которые мы выполняем при тестировании пользовательского интерфейса, API и БД
+
+API documentation - SWAGGER
+
+8.8.192.168.1 - IP address
+
+WHAT IS WEB SERVICES?
+
+API's which are hosted over internet, we call it web services
+API's, которые размещаются через Интернет, мы называем это веб-сервисами
+
+Все web services по умолчанию API, но не все API являются web service
+
+API требуется/ не требуется интернет, но web service требует интернет всегда.
+
+Это два наиболиее известных веб-сервеса, доступных в Интернете.
+
+SOAP (service oriented access protocol)
+REST (representational state transfer)
+
+SOAP (сервис-ориентированный протокол доступа)
+REST (передача репрезентативного состояния) - 90% приложениия используют REST
+
+RESTful web services
+
+Reason of testing the api
+-- Причина тестирования api
+
+to identifier the glitch in the api
+-- чтобы устранить сбой в api
+
+swagger - это документ
+postman - это инструмент
+
+To reach the API / to contact the API we need
+Address of the server - URL
+
+-- Чтобы получить доступ к API / связаться с API, нам нужно
+
+   Адрес сервера -
+
+   URL + end point
+
+hrm.syntaxtechs.net/syntaxapi/api/createUser.php
+
+HTTP - hyper text transfer protocol
+       протокол передачи гипертекста
+
+CRUD -
+to create a record in system - POST METHOD
+to retrieve a record in system - GET METHOD
+to update a record in system - PUT METHOD
+to delete a record in system - DELETE METHOD
+
+swagger - it is a document that explains all the requirements of API
+swagger - это документ, который объясняет все требования API
+
+to create admin user in the system we need -
+    Base URL + endpoint
+
+hrm.syntaxtechs.net/syntaxapi/api/createUser.php
+
+TYPE OF METHOD - POST
+
+We will use JSON format to send the payload/body
+
+BODY/PAYLOAD(полезная нагрузка) -
+
+{
+  "name": "batch12admin",
+  "email": "batch@12test.com",
+  "password": "Test@123"
+}
+
+
+Content-type = application/json
+
+Class 3 -
+
+web services - REST SOAP
+
+REST - representation state transfer
+
+POST, GET, PUT, DELETE
+
+document required for API testing - swagger
+документ, необходимый для тестирования API - swagger
+
+Base URL - address of the server
+Базовый URL - адрес сервера
+
+End point - for every operation we have unique end point
+Конечная точка - для каждой операции у нас есть уникальная конечная точка
+
+HTTP response status codes
+
+- 200 - GET METHOD -> ожидается получение статус-кода 200
+(получение информации из базы данных)
+
+- 201 - CREATE -> ожидается получение статус кода 201 (created)
+(запись в базу данных)
+
+400 - статус код означает, что сообщение запроса, котороет отправляется не верно.
+Сервер к которому пытаются получить доступ не может обработать запрос из-за добущенной ошибки в запросе.
+
+401 - это означает, что сервер к которому пытаемся получить доступ нас не знает
+(то есть клиент должен пройти аутентификацию, чтобы получить запрошенный ответ)
+
+402 - этот код статуса используется очень редко, и никакого стандартного соглашения не существует.
+(зарезервирован для использования в будущем. Первоначальной целью создания этого кода
+было использование его для цифровых платежных систем).
+
+403 -Клиент не имеет прав доступа к контенту;
+то есть он неавторизован, поэтому сервер отказывается предоставить запрошенный ресурс.
+В отличие от 401 несанкционированного доступа, идентификатор клиента известен серверу.
+
+404 - указан неправильный URL
+
+405 - метод не доступен
+
+Если приложение еще не готово, мы можем начать с API тестирования чтобы проверить работает ли
+в настоящее время соединение с базой данных.
+
+два типа API : 1.public(информация доступна для всех(онлайн-газета))
+2.private(информация засекречена(банки))-> требуется аутентификация или авторизация
+
+Аутентификация подтверждает вашу личность, что вы являетесь частью этой системы
+            - с целью предоставления доступа к данной системе
+
+Авторизация - всегда определяет какие операции вы можете выполнять в приложении
+
+API -
+Who are you?
+Are you allowed to use the system?
+Show your ID?
+What permissions you have?
+
+Кто ты?
+Разрешено ли вам пользоваться системой?
+Показать свое удостоверение личности?
+Какие у вас есть разрешения?
+
+
+Банковская система никогда не попоросит сохранить ваши входные данные
+
+State ful application - where the state is set to true
+Приложение с сохранением состояния - где для состояния установлено значение true
+
+Из-за большой нагрузки сервера иногда необходимо пересохранить свои данные,
+балансировщики нагрузки отклоняют ваш запрос в другое хранилище и у вас нет на текущем сервере
+ваших учетных данных.
+
+State less application - where there is no server memory
+We deal tokens here
+Приложение без состояния - там, где нет серверной памяти
+Мы здесь торгуем токенами
+
+для приложений использующих банковские транзакции существует временный токен
+
+Токен - означает в основном предоставленное разрешение
+
+Токен предоставляется админом
+
+Токен состоит из трех частей
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
+eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.
+SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+
+Три типа токенов:
+1. Bearer token
+2. MAC token
+3. Grants
+
+JWT - Json Web Token
+
+токен состоит из трех частей:
+-Header
+-Payload
+-Signature
+
+При создании сотрудника мы должны во вкладке авторизация вставить сгенерированный токен ранее и выбрать Bearer тип
+
+Query Parameter после "?"
+Path parameter после "/"
+
+
+Cookies - are small blocks of data created by a web server while a user is browsing a website and placed on user's
+computer or other device by yhe user's browser
+
+Cookies - это небольшие блоки данных, создаваемые веб-сервером во время просмотра пользователем
+веб-сайта и размещаемые на компьютере пользователя или другом устройстве
+браузером пользователя.
+
+why we need to store this information
+
+1.to reduce the total number of login attempts
+2. track/monitor your activity and use it for advertisement purpose
+
+1.чтобы уменьшить общее количество попыток входа в систему
+2.отслеживайть свою активность и используйть ее в рекламных целях
+
+2 типа Cookies
+
+in-house cookies
+third party cookies
+
+
+
+Class 4 -
+
+1 bearer token
+2 MAC
+3 Grants
+
+Bearer token -
+
+JSON WEB TOKEN - JWT
+
+it has 3 parts
+
+header
+payload
+signature
+
+CRUD
+create, retrieve, update, delete
+
+creating an employee -
+Мы создаем сотрудника после генерации токена
+
+POST, base url + endpoint
+body, headers, authorization - bearer token
+
+response code should be - 201 created
+
+to fetch the record of one employee from DB
+
+- we need to pass query parameter
+
+cookies -
+
+Retrieve all the employees from system -
+Извлеките всех сотрудников из системы -
+
+Get All Employees
+
+GET -
+Base url + endpoint
+
+
+Get all the job titles
+Base url + endpoint
+
+In POST method, you are creating a new record in the DB
+In PUT method, you are updating existing record in the DB
+
+In PUT method, we get 200 status code as a response
+In POST method, we get 201 status code as a response
+
+PUT method
+
+Base url + endpoint
+type of method - PUT
+Body
+{
+  "employee_id": "3451A",
+  "emp_firstname": "edward",
+  "emp_lastname": "sisi",
+  "emp_middle_name": "MS",
+  "emp_gender": "M",
+  "emp_birthday": "1995-06-12",
+  "emp_status": "confirmed",
+  "emp_job_title": "Manager"
+}
+
+TO UPDATE partial information of the employee
+type of method
+
+- PATCH
+
+Base url + endpoint
+
+Body
+{
+  "employee_id": "30034842",
+  "emp_status": "Not on probation",
+  "emp_job_title": "Dy Manager"
+}
+
+We use chai assertion library in postman to verify the response
+pm is the object we use to call all the functions in postman
+Test ts the tab where we can find all the snippets for the relevant functions
+We can change the name of the method and the status code as per the requirement
+Also, we can have multiple tests in a single request
+
+Мы используем библиотеку утверждений chai в postman для проверки ответа
+pm - это объект, который мы используем для вызова всех функций в postman
+Тест на вкладке, где мы можем найти все фрагменты для соответствующих функций
+Мы можем изменить имя метода и код состояния в соответствии с требованиями
+Кроме того, мы можем использовать несколько тестов в одном запросе
+
+
+
 Class 5 -
 
 
@@ -164,26 +565,39 @@ Rest assured API
 
 It is DSL (domain specific language)
 It is java based library that is used to automation rest API'
+Будьте уверены, API
+
+Это DSL (язык, специфичный для конкретной области)
+Это библиотека на основе Java, которая используется для автоматизации rest API'
 
 given, when, then
 
 
 Rest assured follows the functionality of BDD
-
 pre condition - request preparation, request specification
+
+Будьте уверены, что следует функциональности BDD
+предварительное условие - подготовка запроса, спецификация запроса
 
 given - prepare the request
 when  - hitting the end point (send the request)
 then - expected response
 
+given - подготовьте запрос;
+when - попадание в конечную точку (отправка запроса);
+then - ожидаемый ответ;
 
 NOTE: baseURI = baseURL
 
 
 Hamcrest matchers -
 It is a popular framework that helps us to create the matcher objects.
+Подборщики Хэмкреста -
+Это популярный фреймворк, который помогает нам создавать объекты сопоставления.
 
 prettyPrint - it is used to print the response in console
+prettyPrint - используется для печати ответа в консоли
+
 
 
 Class 6
@@ -196,6 +610,13 @@ Java rest assured API -
 given - prepare the request
 when - making a call
 then - verification/assertion
+
+
+given - используется для подготовки запроса;
+когда - выполнение вызова;
+затем - проверка/утверждение;
+
+следует поведентическому подходу к разработке
 
 Class 7
 
@@ -212,15 +633,19 @@ token
 
 then -
 
-- jsonPath()
+- jsonPath() - чтобы получить одно конкретное значение используем данный метод (jsonPath().getString)
+Данный метод дает значение по ключу, кторый вы упоминаете внутри этого конкретного синтаксиса.
+Мы используем статическую переменную для индефикатора сотрудника используя метод jsonPath()
 
 - To retrieve employee from the database
 GET -
 query parameter
 token
 
-@Test - junit annotation we use to execute our test cases
-@Fix method order we use to change the flow of execution (Name.Ascending - alphabetical order)
+
+@Test - junit annotation we used to execute our test cases
+@Fix method order we used to change the flow of execution (Name.Ascending - alphabetical order)
+данная аннотация используется для определения порядка выполнения тестов
 
 TO update the details of the employee
 PUT

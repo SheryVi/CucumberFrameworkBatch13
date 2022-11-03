@@ -16,40 +16,40 @@ import static org.hamcrest.Matchers.*;
 public class HardCodedExamples {
 
     String  baseURI = RestAssured.baseURI = "http://hrm.syntaxtechs.net/syntaxapi/api";
-    String token = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTUzMzQ5MzcsImlzcyI6ImxvY2FsaG9zdCIsImV4cCI6MTY1NTM3ODEzNywidXNlcklkIjoiMzc3MiJ9.LhXpsb6JLtcVmV1KL9lUU1pUSCknh-LcqQPZqFAM75w";
+    String token = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NjczODk0MTYsImlzcyI6ImxvY2FsaG9zdCIsImV4cCI6MTY2NzQzMjYxNiwidXNlcklkIjoiNDYzMCJ9.XPtgHEzMCWHQVjbojawK4NfzpANI6HHpA6e7Kx4j1fQ";
     static String employee_id;
 
     @Test
     public void acreateEmployee(){
     RequestSpecification request = given().header("Content-Type", "application/json").
-                header("Authorization", token).body("{\n" +
-                        "  \"emp_firstname\": \"manana\",\n" +
-                        "  \"emp_lastname\": \"patsatsia\",\n" +
-                        "  \"emp_middle_name\": \"MS\",\n" +
-                        "  \"emp_gender\": \"F\",\n" +
-                        "  \"emp_birthday\": \"2000-06-11\",\n" +
-                        "  \"emp_status\": \"Probation\",\n" +
-                        "  \"emp_job_title\": \"QA\"\n" +
-                        "}");
+            header("Authorization", token).body("{\n" +
+                    "  \"emp_firstname\": \"Vi\",\n" +
+                    "  \"emp_lastname\": \"Sh\",\n" +
+                    "  \"emp_middle_name\": \"MS\",\n" +
+                    "  \"emp_gender\": \"F\",\n" +
+                    "  \"emp_birthday\": \"1999-06-15\",\n" +
+                    "  \"emp_status\": \"Probation\",\n" +
+                    "  \"emp_job_title\": \"QA\"\n" +
+                    "}");
 
-    Response response = request.when().post("/createEmployee.php");
+    Response response = request.when().post("/createEmployee.php"); //вызываем конечную точку
     response.prettyPrint();
-    response.then().assertThat().statusCode(201);
-    //Hamcrest matchers
+    response.then().assertThat().statusCode(201); // проверка метода по конкретному ключу
+    //Hamcrest matchers                           // есть конкретное значение или нет
     response.then().assertThat().body("Message", equalTo("Employee Created"));
-    response.then().assertThat().body("Employee.emp_firstname", equalTo("manana"));
+    response.then().assertThat().body("Employee.emp_firstname", equalTo("Vi"));
 
     //using jsonPath(), to specify the key in the body so that it
         // returns the value against it
     employee_id = response.jsonPath().getString("Employee.employee_id");
     System.out.println(employee_id);
+
     }
 
     @Test
     public void bgetCreatedEmployee(){
         RequestSpecification preparedRequest = given().header("Content-Type", "application/json").
                 header("Authorization", token).queryParam("employee_id", employee_id);
-
 
         Response response = preparedRequest.when().get("/getOneEmployee.php");
         response.prettyPrint();
@@ -67,13 +67,13 @@ public class HardCodedExamples {
                 .header("Authorization", token).
                 body("{\n" +
                         "  \"employee_id\": \"" + employee_id + "\",\n" +
-                        "  \"emp_firstname\": \"edward\",\n" +
-                        "  \"emp_lastname\": \"sisi\",\n" +
+                        "  \"emp_firstname\": \"Angelina\",\n" +
+                        "  \"emp_lastname\": \"Joly\",\n" +
                         "  \"emp_middle_name\": \"MS1\",\n" +
-                        "  \"emp_gender\": \"M\",\n" +
-                        "  \"emp_birthday\": \"1995-06-12\",\n" +
+                        "  \"emp_gender\": \"F\",\n" +
+                        "  \"emp_birthday\": \"1970-06-15\",\n" +
                         "  \"emp_status\": \"confirmed\",\n" +
-                        "  \"emp_job_title\": \"Manager\"\n" +
+                        "  \"emp_job_title\": \"Actress\"\n" +
                         "}");
 
         Response response = preparedRequest.when().put("/updateEmployee.php");
